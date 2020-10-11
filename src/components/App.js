@@ -1,11 +1,14 @@
 import React from 'react';
+import SearchBar from './SearchBar';
 
-const API_KEY = process.env.API_KEY;
-console.log(API_KEY);
-console.log(process.env);
+const API_KEY = 'AIzaSyBGFN7GhBGbgsibKFN53J96Dw2cwI7xyV4';
 
 function App() {
-    return <div>Hello</div>;
+    return (
+        <div>
+            <SearchBar />
+        </div>
+    );
 }
 
 export default App;
