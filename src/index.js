@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchBar from './components/SearchBar';
+import App from './components/App';
 
-ReactDOM.render(<SearchBar />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.querySelector('.container'));
