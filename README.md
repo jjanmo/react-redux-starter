@@ -1,25 +1,19 @@
-# ReduxSimpleStarter
+# React-Redux
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+> 리액트와 리덕스에 대해서 알아보자
 
-### Getting Started
+> 학습 레퍼런스
 
-There are two methods for getting started with this repo.
+-   [모던 리액트(React)와 리덕스(Redux)](https://www.udemy.com/react-redux/) 강의
+-   [React Official Site](https://ko.reactjs.org/)
+-   [Redux Official Site](https://ko.redux.js.org/)
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
+> 실습 과정을 기록으로 남긴다.
 
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
+> 기존의 강의에서 제공되는 기본적인 설정(웹팩, 바벨 등)이 되어있는 프로젝트를 클론하여 사용하였다. [[기존 프로젝트](_README.md)]
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+## MiniProject1
 
-```
-> npm install
-> npm start
-```
+> 리액트로 만든 Youtube Video 리스트
+
+![project1](image/project1.png)
