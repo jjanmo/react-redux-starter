@@ -1,30 +1,32 @@
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
+  mode: 'development',
   entry: ['./src/index.js'],
   output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: path.resolve('./dist'),
+    filename: 'bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015', 'stage-1']
-        }
-      }
-    ]
+        exclude: [/node_modules/, require.resolve('./index.html')],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: 'index.html',
+    }),
+  ],
   devServer: {
-    historyApiFallback: true,
-    contentBase: './',
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    }
-  }
+    hot: 'only',
+  },
 };
