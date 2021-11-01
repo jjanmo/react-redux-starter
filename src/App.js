@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Section2 from './section2';
 
-function App() {
-  return <Section2 />;
+class App extends Component {
+  render() {
+    return <Section2 />;
+  }
 }
 
 export default App;

@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
       term: '',
     };
   }
+
   render() {
     return <input value={this.state.term} onChange={(e) => this.setState({ term: e.target.value })} autoFocus />;
   }
