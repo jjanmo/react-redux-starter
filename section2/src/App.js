@@ -21,8 +21,10 @@ class App extends Component {
 
   async componentDidMount() {
     const config = createAxiosConfig('get', {
-      query: 'iu',
+      query: '스타크래프트',
       per_page: 5,
+      direction: 'desc',
+      sort: 'date',
     });
 
     try {
@@ -31,7 +33,6 @@ class App extends Component {
         videos: response.data.data,
         selectedVideo: response.data.data[0],
       });
-      console.log('✅', this.state);
     } catch (error) {
       console.log(error);
     }

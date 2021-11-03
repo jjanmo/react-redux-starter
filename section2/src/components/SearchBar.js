@@ -1,3 +1,4 @@
+import { Container, Input } from '@mui/material';
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
@@ -18,9 +19,17 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
-        <input value={this.state.term} onChange={this.onChange} autoFocus />
-      </div>
+      <Container maxWidth="md" sx={{ my: 3 }}>
+        <Input
+          margin="dense"
+          fullWidth
+          autoFocus
+          value={this.state.term}
+          onChange={this.onChange}
+          autoFocus
+          sx={{ backgroundColor: '#eee' }}
+        />
+      </Container>
     );
   }
 }
