@@ -4,6 +4,8 @@ import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
 import axios from 'axios';
 import { createAxiosConfig } from './utils/request';
+import { Typography, Container } from '@mui/material';
+import { Box } from '@mui/system';
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +22,7 @@ class App extends Component {
   async componentDidMount() {
     const config = createAxiosConfig('get', {
       query: 'iu',
-      per_page: 10,
+      per_page: 5,
     });
 
     try {
@@ -29,6 +31,7 @@ class App extends Component {
         videos: response.data.data,
         selectedVideo: response.data.data[0],
       });
+      console.log('✅', this.state);
     } catch (error) {
       console.log(error);
     }
@@ -42,11 +45,13 @@ class App extends Component {
     const { videos, selectedVideo } = this.state;
 
     return (
-      <div>
+      <>
         <SearchBar />
-        <VideoDetail video={selectedVideo} />
-        <VideoList videos={videos} onClickVideo={this.onClickVideo} />
-      </div>
+        <Box sx={{ display: 'grid', gridTemplateColumns: '3fr 2fr' }}>
+          <VideoDetail video={selectedVideo} />
+          <VideoList videos={videos} onClickVideo={this.onClickVideo} />
+        </Box>
+      </>
     );
   }
 }
