@@ -18,9 +18,9 @@ const styles = {
   },
 };
 
-const VideoListItem = ({ video }) => {
+const VideoListItem = ({ video, onClickVideo }) => {
   return (
-    <li style={styles.wrapper}>
+    <li style={styles.wrapper} onClick={() => onClickVideo(video)}>
       <div className="list-group-item">
         <div className="video-list media">
           <div className="media-left">

@@ -7,10 +7,12 @@ const styles = {
   },
 };
 
-const VideoList = ({ videos }) => {
+const VideoList = ({ videos, onClickVideo }) => {
   return (
     <ul className="col-md-4 list-group" style={styles.list}>
-      {videos && videos.length > 0 && videos.map((video) => <VideoListItem key={video.etag} video={video} />)}
+      {videos &&
+        videos.length > 0 &&
+        videos.map((video) => <VideoListItem key={video.etag} video={video} onClickVideo={onClickVideo} />)}
     </ul>
   );
 };

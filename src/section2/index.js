@@ -25,7 +25,7 @@ class Section2 extends Component {
   }
 
   onClickVideo(video) {
-    this.setState({ video });
+    this.setState({ selectedVideo: video });
   }
 
   render() {
@@ -34,7 +34,7 @@ class Section2 extends Component {
         <SearchBar />
         <div className="row">
           <VideoDetail video={this.state.selectedVideo} />
-          <VideoList videos={this.state.videos} />
+          <VideoList videos={this.state.videos} onClickVideo={this.onClickVideo.bind(this)} />
         </div>
       </div>
     );
