@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import SearchBar from './components/SearchBar';
 import YoutubeSearchAPI from 'youtube-api-search';
-import { videos } from './dummy';
 import VideoList from './components/VideoList';
+import VideoDetail from './components/VideoDetail';
+import { videos } from './dummy';
 
 class Section2 extends Component {
   constructor(props) {
@@ -10,20 +11,31 @@ class Section2 extends Component {
 
     this.state = {
       videos: [],
+      selectedVideo: null,
     };
 
-    YoutubeSearchAPI({ key: process.env.API_KEY, term: '스타크래프트' }, (videos) => this.setState({ videos }));
+    // 유투브 API 할당량에 의해 주석 처리
+    // YoutubeSearchAPI({ key: process.env.API_KEY, term: 'IU' }, (videos) =>
+    //   this.setState({ videos, selectedVideo: videos[0] })
+    // );
   }
 
-  // componentDidMount() {
-  //   this.setState({ videos });
-  // }
+  componentDidMount() {
+    this.setState({ videos, selectedVideo: videos[0] });
+  }
+
+  onClickVideo(video) {
+    this.setState({ video });
+  }
 
   render() {
     return (
       <div>
         <SearchBar />
-        <VideoList videos={this.state.videos} />
+        <div className="row">
+          <VideoDetail video={this.state.selectedVideo} />
+          <VideoList videos={this.state.videos} />
+        </div>
       </div>
     );
   }
