@@ -13,8 +13,11 @@ class SearchBar extends Component {
   }
 
   onChange(e) {
-    console.log(this.state.term);
-    this.setState({ term: e.target.value });
+    const { onSearchVideo } = this.props;
+    const { value } = e.target;
+
+    this.setState({ term: value });
+    onSearchVideo(value);
   }
 
   render() {
@@ -26,7 +29,6 @@ class SearchBar extends Component {
           autoFocus
           value={this.state.term}
           onChange={this.onChange}
-          autoFocus
           sx={{ backgroundColor: '#eee' }}
         />
       </Container>

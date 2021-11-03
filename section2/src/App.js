@@ -4,7 +4,6 @@ import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
 import axios from 'axios';
 import { createAxiosConfig } from './utils/request';
-import { Typography, Container } from '@mui/material';
 import { Box } from '@mui/system';
 
 class App extends Component {
@@ -17,11 +16,12 @@ class App extends Component {
     };
 
     this.onClickVideo = this.onClickVideo.bind(this);
+    this.onSearchVideo = this.onSearchVideo.bind(this);
   }
 
-  async componentDidMount() {
+  async onSearchVideo(term) {
     const config = createAxiosConfig('get', {
-      query: '스타크래프트',
+      query: term,
       per_page: 5,
       direction: 'desc',
       sort: 'date',
@@ -47,7 +47,7 @@ class App extends Component {
 
     return (
       <>
-        <SearchBar />
+        <SearchBar onSearchVideo={this.onSearchVideo} />
         <Box sx={{ display: 'grid', gridTemplateColumns: '3fr 2fr' }}>
           <VideoDetail video={selectedVideo} />
           <VideoList videos={videos} onClickVideo={this.onClickVideo} />

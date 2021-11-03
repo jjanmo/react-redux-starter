@@ -7,6 +7,7 @@ export const parseHTML = (string) => {
 
   string = string.replace(_width, 'width="1280"');
   string = string.replace(_height, 'height="720"');
+  string = string.replace('allowfullscreen', '');
 
   return string;
 };
