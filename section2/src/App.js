@@ -3,6 +3,7 @@ import SearchBar from '../../section2/src/components/SearchBar';
 import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
 import axios from 'axios';
+import { createAxiosConfig } from './utils/request';
 
 class App extends Component {
   constructor(props) {
@@ -16,26 +17,21 @@ class App extends Component {
     this.onClickVideo = this.onClickVideo.bind(this);
   }
 
-  componentDidMount() {
-    axios({
-      method: 'get',
-      baseURL: process.env.REACT_APP_BASE_URL,
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
-      },
-      params: {
-        query: 'iu',
-        per_page: 10,
-      },
-    })
-      .then((response) => {
-        this.setState({
-          videos: response.data.data,
-          selectedVideo: response.data.data[0],
-        });
-      })
-      .catch((error) => console.log(error));
+  async componentDidMount() {
+    const config = createAxiosConfig('get', {
+      query: 'iu',
+      per_page: 10,
+    });
+
+    try {
+      const response = await axios(config);
+      this.setState({
+        videos: response.data.data,
+        selectedVideo: response.data.data[0],
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   onClickVideo(video) {
