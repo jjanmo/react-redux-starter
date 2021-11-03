@@ -5,6 +5,7 @@ import VideoDetail from './components/VideoDetail';
 import axios from 'axios';
 import { createAxiosConfig } from './utils/request';
 import { Box } from '@mui/system';
+import _ from 'lodash';
 
 class App extends Component {
   constructor(props) {
@@ -45,9 +46,11 @@ class App extends Component {
   render() {
     const { videos, selectedVideo } = this.state;
 
+    const onSearchVideo = _.debounce((term) => this.onSearchVideo(term), 300);
+
     return (
       <>
-        <SearchBar onSearchVideo={this.onSearchVideo} />
+        <SearchBar onSearchVideo={onSearchVideo} />
         <Box sx={{ display: 'grid', gridTemplateColumns: '3fr 2fr' }}>
           <VideoDetail video={selectedVideo} />
           <VideoList videos={videos} onClickVideo={this.onClickVideo} />
