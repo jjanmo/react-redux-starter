@@ -1,7 +1,12 @@
 import React from 'react';
+import BookList from './containers/BookListContainer';
 
 function App() {
-  return <div>Section4</div>;
+  return (
+    <div>
+      <BookList />
+    </div>
+  );
 }
 
 export default App;
