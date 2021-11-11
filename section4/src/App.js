@@ -1,5 +1,5 @@
 import React from 'react';
-import BookList from './containers/BookListContainer';
+import { BookList } from './components/bookList';
 
 function App() {
   return (
