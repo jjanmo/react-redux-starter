@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import BookList from '../components/BookList';
+import BookListPresenter from './presenter';
 import { connect } from 'react-redux';
 
 class BookListContainer extends Component {
   render() {
     return (
       <div>
-        <BookList bookList={this.props.bookList} />
+        <BookListPresenter bookList={this.props.bookList} />
       </div>
     );
   }
