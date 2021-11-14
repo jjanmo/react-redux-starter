@@ -6,16 +6,15 @@ class BookListContainer extends Component {
   render() {
     return (
       <div>
-        <BookListPresenter bookList={this.props.bookList} />
+        <BookListPresenter bookList={this.props.list} />
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
-    bookList: state.bookList,
+    list: state.book.list,
   };
 }
 
