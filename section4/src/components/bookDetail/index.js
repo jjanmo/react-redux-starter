@@ -1,1 +1,1 @@
-export { default as BookDeatail } from './container';
+export { default as BookDetail } from './container';

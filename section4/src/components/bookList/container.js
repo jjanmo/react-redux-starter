@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import BookListPresenter from './presenter';
 import { connect } from 'react-redux';
+import BookListPresenter from './presenter';
+import * as bookActions from '../../store/modules/book';
 
 class BookListContainer extends Component {
   render() {
     return (
       <div>
-        <BookListPresenter bookList={this.props.list} />
+        <BookListPresenter bookList={this.props.list} selectBook={this.props.selectBook} />
       </div>
     );
   }
@@ -17,5 +18,10 @@ function mapStateToProps(state) {
     list: state.book.list,
   };
 }
+function mapDispatchToProps(dispatch) {
+  return {
+    selectBook: (id) => dispatch(bookActions.selectBook(id)),
+  };
+}
 
-export default connect(mapStateToProps)(BookListContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(BookListContainer);

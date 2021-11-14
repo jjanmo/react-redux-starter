@@ -9,17 +9,17 @@
 .item:hover {
   background-color: #eee;
 }
-.details {
+.item .right-info {
   margin: 20px 0 0 20px;
 }
-.details div:nth-child(1) {
+.item .right-info div:nth-child(1) {
   font-size: 21px;
   font-weight: bold;
   margin-bottom: 5px;
 }
-.details div:nth-child(2) {
+.item .right-info div:nth-child(2) {
   color: gray;
 }
-.details div:nth-child(3) {
+.item .right-info div:nth-child(3) {
   color: gray;
 }

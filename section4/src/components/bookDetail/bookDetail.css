@@ -1,0 +1,30 @@
+.no-select {
+  margin: 2rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.container {
+  margin: 2rem 1rem;
+}
+.infos {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.infos .right-infos {
+  margin: 1.5rem 0 0 2rem;
+}
+.infos .right-infos div:nth-child(1) {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.infos .right-infos div:nth-child(n + 2) {
+  font-size: 18px;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}

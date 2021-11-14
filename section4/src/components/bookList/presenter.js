@@ -1,15 +1,15 @@
 import React from 'react';
 import './bookList.css';
 
-function BookListPresenter({ bookList }) {
-  const Item = ({ title, author, publisher, release, image }) => {
+function BookListPresenter({ bookList, selectBook }) {
+  const Item = ({ id, title, author, publisher, release, image }) => {
     return (
-      <div className="item">
+      <div className="item" onClick={() => selectBook(id)}>
         <img src={image} alt={'book'} />
-        <div className="details">
+        <div className="right-info">
           <div>{title}</div>
           <div>
-            {author} | {publisher}
+            {author.join(', ')} | {publisher}
           </div>
           <div>{release}</div>
         </div>
