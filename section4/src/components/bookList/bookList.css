@@ -1,0 +1,25 @@
+.item {
+  display: flex;
+  margin: 1rem;
+  width: 90%;
+  border: 3px solid #eee;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.item:hover {
+  background-color: #eee;
+}
+.details {
+  margin: 20px 0 0 20px;
+}
+.details div:nth-child(1) {
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.details div:nth-child(2) {
+  color: gray;
+}
+.details div:nth-child(3) {
+  color: gray;
+}
