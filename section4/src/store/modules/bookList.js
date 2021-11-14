@@ -1,5 +1,5 @@
-export default function bookListReducer() {
-  return [
+const initialState = {
+  bookList: [
     {
       title: '메타버스 FOR 에듀테크',
       author: ['변문경', '박찬', '김병석', '이정훈'],
@@ -42,5 +42,13 @@ export default function bookListReducer() {
       release: '2019.09',
       image: 'https://image.yes24.com/Goods/78586788/M',
     },
-  ];
+  ],
+};
+
+export default function reducer(state = initialState, action) {
+  switch (action.type) {
+    default: {
+      return state;
+    }
+  }
 }
